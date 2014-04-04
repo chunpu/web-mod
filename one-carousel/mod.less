@@ -1,0 +1,118 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('http://at.alicdn.com/t/font_1396505954_3063805.eot'); /* IE9*/
+  src: url('http://at.alicdn.com/t/font_1396505954_3063805.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('http://at.alicdn.com/t/font_1396505954_3327038.woff') format('woff'), /* chrome、firefox */
+  url('http://at.alicdn.com/t/font_1396505954_2656283.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('http://at.alicdn.com/t/font_1396505954_3710315.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+body {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.inline-block() {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+// start 
+
+i, .i {
+    font-family: iconfont;
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.69);
+    display: inline;
+}
+
+ul {
+    list-style: none;
+}
+
+.r {
+    float: right;
+}
+
+.orange {
+    background-color: orange;
+}
+.pink {
+    background-color: pink;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.mod {
+    @n: 7;
+    @h: 300px;
+    @w: 600px;
+    position: relative;
+    height: @h;
+    border: 1px solid #ccc;
+    width: @w;
+    margin: 200px auto;
+    overflow: hidden;
+    i, .i {
+        @font-h: 45px;
+        font-size: @font-h - 15;
+        line-height: @font-h;
+        padding: 0 6px;
+        position: absolute;
+        z-index: 10;
+        &:hover {
+            background: rgba(143, 143, 143, 0.47);
+        }
+        cursor: pointer;
+        -webkit-user-select: none;
+        top: 50%;
+        margin-top: -@font-h/2;
+    }
+    .prev {
+        left: 0;
+    }
+    .next {
+        right: 0;
+    }
+    ul.main {
+        width: @w * (@n+1);
+        //-webkit-transform: translate3d(-600px, 0px, 0px);
+        position: absolute;
+        left: 0;
+        li {
+            float: left;
+            height: @h;
+            width: @w;
+        }
+    }
+    .navbar {
+        @h: 40px;
+        position: absolute;
+        bottom: 0;
+        background: rgba(204, 204, 204, 0.45);
+        height: @h;
+        line-height: @h;
+        text-align: center;
+        width: 100%;
+        span {
+            .inline-block();
+            background: #777;
+            margin: 0 @h / 8;
+            height: @h / 3;
+            width: @h / 3;
+            border-radius: 50%;
+            cursor: pointer;
+            &.cur {
+                background: #5cb85c;
+            }
+        }
+    }
+
+}
